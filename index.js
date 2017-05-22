@@ -20,7 +20,9 @@ var FastCms = function(){
 FastCms.prototype.get = FastCms.prototype.set = require('./lib/define.js');
 FastCms.prototype.init = require('./lib/init.js');
 FastCms.prototype.start = require('./lib/start.js');
+FastCms.prototype.createRouter = require('./lib/createRouter.js');
 FastCms.prototype.initFpmClient = require('./lib/initFpmClient.js');
+FastCms.prototype.initRouter = require('./lib/initRouter.js');
 FastCms.prototype.initAppServer = require('./lib/initAppServer.js');
 
 var _cms = module.exports = new FastCms();

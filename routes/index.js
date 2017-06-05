@@ -1,19 +1,7 @@
-const router = require('koa-router')()
+var admin = require('./admin.js');
+var api = require('./api.js');
 
-router.get('/', async (ctx, next) => {
-  await ctx.render('index', {
-    title: 'Hello FPM!'
-  })
-})
-
-router.get('/string', async (ctx, next) => {
-  ctx.body = 'koa2 string'
-})
-
-router.get('/json', async (ctx, next) => {
-  ctx.body = {
-    title: 'koa2 json'
-  }
-})
-
-module.exports = router
+module.exports = function(router, self){
+  admin(router, self);
+  api(router, self);
+}

@@ -1,13 +1,7 @@
-const router = require('koa-router')()
+var util = require('../utils');
 
-router.prefix('/users')
-
-router.get('/', function (ctx, next) {
-  ctx.body = 'this is a users response!'
-})
-
-router.get('/bar', function (ctx, next) {
-  ctx.body = 'this is a users/bar response'
-})
-
-module.exports = router
+module.exports = function(router, self){
+  router.post('/api/users', async function(ctx, next){
+    ctx.data = await self.model.common.query('fpm_user', ctx.api.pager, ctx.api.order);
+  })
+}

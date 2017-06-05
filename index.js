@@ -6,6 +6,8 @@ var FastCms = function(){
   this._options = {
     name: 'FastCms',
     brand: 'YunPlus.IO',
+    config: {},
+    config_file: 'config.yaml',
   }; 
   this.set('server', {
     port: 8081,
@@ -19,10 +21,13 @@ var FastCms = function(){
 
 FastCms.prototype.get = FastCms.prototype.set = require('./lib/define.js');
 FastCms.prototype.init = require('./lib/init.js');
+FastCms.prototype.loadConfig = require('./lib/loadConfig.js');
 FastCms.prototype.start = require('./lib/start.js');
 FastCms.prototype.createRouter = require('./lib/createRouter.js');
-FastCms.prototype.initFpmClient = require('./lib/initFpmClient.js');
+FastCms.prototype.initModel = require('./lib/model').init;
 FastCms.prototype.initRouter = require('./lib/initRouter.js');
 FastCms.prototype.initAppServer = require('./lib/initAppServer.js');
+FastCms.prototype.session = require('./lib/session.js');
+FastCms.prototype.initNav = require('./lib/initNav.js');
 
 var _cms = module.exports = new FastCms();

@@ -1,0 +1,42 @@
+<!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+        <li class="header">HEADER</li>
+        <!-- Optionally, you can add icons to the links -->
+        {% for item in nav %}
+          {% if item.sub %}
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-{{ item.icon }}"></i> 
+              <span>{{ item.label }}</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              {% for subItem in item.sub %}
+              <li>
+                <a href="{{ subItem.path }}">{{ subItem.label }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% else %}
+          <li class="{{ 'active' if item.path === current_path }}">
+            <a href="{{ item.path }}">
+              <i class="fa fa-{{ item.icon}}"></i> 
+              <span>{{ item.label}}</span>
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>

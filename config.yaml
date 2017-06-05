@@ -1,0 +1,46 @@
+admin:
+  auth:
+    username: 'admin'
+    password: 'foo'
+  nav:
+    # admin navs
+    - 
+      label: '工作台'
+      icon: 'laptop'
+      path: '/admin/dashboard'
+      order: 1
+    -
+      label: '用户'
+      icon: 'users'
+      path: '/admin/users'
+      order: 1
+    - 
+      label: '内容'
+      icon: 'file-text-o'
+      path: '/admin/posts'
+      order: 1
+    -
+      label: '图片'
+      icon: 'image'
+      path: '/admin/gallery'
+      order: 1
+    -
+      label: '设置'
+      icon: 'cogs'
+      order: 1
+      sub:
+        -
+          label: 'SEO'
+          icon: 'smtp'
+          path: '/admin/setting/seo'
+          order: 1
+        -
+          label: 'theme'
+          icon: 'theme'
+          path: '/admin/setting/theme'
+          order: 2
+
+fpm:
+  appkey: '123123'
+  masterkey: '123123'
+  endpoint: 'http://api.yunplus.io/api'

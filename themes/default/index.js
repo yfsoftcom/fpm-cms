@@ -1,0 +1,2 @@
+// bind router
+// bind theme

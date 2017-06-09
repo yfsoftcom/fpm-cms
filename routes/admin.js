@@ -70,6 +70,26 @@ module.exports = function(router, self){
     ctx.redirect('/admin/posts');
   });
 
+  router.get('/admin/pages', async (ctx, next) => {
+    await ctx.render('admin/pages', {
+      title: 'Hello ' + brand,
+      nav : nav,
+      current_path: '/admin/pages',
+    })
+  });
+
+  router.get('/admin/pages/new', async (ctx, next) => {
+    await ctx.render('admin/page-new', {
+      title: 'Hello ' + brand,
+      nav : nav,
+      current_path: '/admin/pages',
+    })
+  });
+
+  router.post('/admin/pages/new', async (ctx, next) => {
+    ctx.redirect('/admin/pages');
+  });
+
 
   router.get('/admin/gallery', async (ctx, next) => {
     await ctx.render('admin/gallery', {

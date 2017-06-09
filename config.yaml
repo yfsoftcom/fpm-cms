@@ -19,6 +19,11 @@ admin:
       icon: 'file-text-o'
       path: '/admin/posts'
       order: 1
+    - 
+      label: '页面'
+      icon: 'file-text-o'
+      path: '/admin/pages'
+      order: 1
     -
       label: '图片'
       icon: 'image'

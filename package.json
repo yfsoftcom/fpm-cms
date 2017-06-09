@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node run.js",
-    "dev": "./node_modules/.bin/nodemon run.js",
+    "dev": "./node_modules/.bin/nodemon run.js && echo \"http://localhost:8081\"",
     "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

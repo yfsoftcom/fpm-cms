@@ -1,5 +1,5 @@
 var _ = require('lodash');
-
+var path = require('path');
 // FastCms Class Define
 var FastCms = function(){
   this._app = null;    // mvc web server
@@ -8,6 +8,8 @@ var FastCms = function(){
     brand: 'YunPlus.IO',
     config: {},
     config_file: 'config.yaml',
+    theme: 'default',
+    baseDir: process.cwd(),
   }; 
   this.set('server', {
     port: 8081,
@@ -29,5 +31,8 @@ FastCms.prototype.initRouter = require('./lib/initRouter.js');
 FastCms.prototype.initAppServer = require('./lib/initAppServer.js');
 FastCms.prototype.session = require('./lib/session.js');
 FastCms.prototype.initNav = require('./lib/initNav.js');
-
+FastCms.prototype.theme = require('./lib/theme.js');
+FastCms.prototype.getPath = function(filepath){
+  return path.join(this.get('baseDir'), filepath);
+}
 var _cms = module.exports = new FastCms();
